@@ -1,0 +1,17 @@
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #006bb3;
+    text-align: center;
+    padding: 16px 32px;
+    color: #fff;
+    font-size: 0.9rem;
+    z-index: 100;
+    font-family: geistMono;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 0.65rem;
+    }
+}

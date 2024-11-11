@@ -12,6 +12,8 @@
 
 html,
 body {
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -19,13 +21,19 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: geistMono, sans-serif;
+  font-family: geistSans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: Carrdo, serif;
+h1{
+  font-family: geistMono;
+}
+
+h2, h3, h4, h5, h6{
+  font-family: Cardo, serif;
 }
 
 * {

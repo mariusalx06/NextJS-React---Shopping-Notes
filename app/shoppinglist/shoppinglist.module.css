@@ -1,3 +1,10 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+  }
+
 .centeredBox {
     width: 400px;
     height: 250px;
@@ -10,13 +17,8 @@
     border-radius: 10px;
     padding: 20px;
     background-color: rgba(0, 107, 179, 0.5);
-    font-family: Cardo;
-
-    /* Absolute centering with a transform */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);  /* Moves it back by 50% of its own size */
+    margin: 0 auto;
+    position: relative;
     z-index: 1;
 }
 
@@ -44,7 +46,7 @@
 
 .leftButton {
     background-color: #ffeaa7;
-    font-family: geistMono;
+    font-family: geistMono serif;
     font-weight: 700;
 }
 
@@ -54,7 +56,7 @@
 
 .rightButton {
     background-color: #a8e6cf;
-    font-family: geistMono;
+    font-family: geistMono serif;
     font-weight: 700;
 }
 

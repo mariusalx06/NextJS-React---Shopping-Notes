@@ -1,0 +1,46 @@
+.note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+}
+.note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+.note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+  
+.note button {
+    position: relative;
+    margin-right: 10px;
+    color: #00FF9C;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+}
+
+.leftbutton{
+    float: left;
+}
+
+.rightbutton{
+    float:right
+}
+
+@media (max-width: 600px) {
+    .note {
+        width: 80%; /* Make each note take up 90% of the screen width */
+        margin-bottom: 10px; /* Add space between notes */
+        max-width: 500px;  /* Optional: Set a max-width to prevent notes from becoming too large */
+    }
+}

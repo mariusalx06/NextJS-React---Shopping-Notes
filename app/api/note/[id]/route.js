@@ -3,7 +3,7 @@ import database from '../../../../lib/db';
 
 export async function GET(request,{ params }) {
     try {
-      const { id } = params;
+      const { id } = await params;
   
       console.log('Params:', params);
       const response = await database.query("SELECT * FROM notes WHERE id=$1", [id]);
@@ -45,7 +45,7 @@ export async function GET(request,{ params }) {
 
 export async function PUT(request,{params}){
     try {
-      const { id } = params;
+      const { id } = await params;
       const { title, content } = await request.json();
       
       const response = await database.query("SELECT * FROM notes WHERE id=$1",[id]);
@@ -96,7 +96,7 @@ export async function PUT(request,{params}){
 
 export async function PATCH(request,{params}) {
     try{
-        const { id } = params;
+        const { id } =  await params;
         const { title, content } = await request.json();
 
         const response = await database.query("SELECT * FROM notes WHERE id=$1",[id]);
@@ -162,7 +162,7 @@ export async function PATCH(request,{params}) {
 export async function DELETE(request, { params }) {
     try {
       
-      const { id } = params;
+      const { id } = await params;
 
       const response = await database.query("SELECT * FROM notes WHERE id=$1", [id]);
       if (response.rows.length === 0) {

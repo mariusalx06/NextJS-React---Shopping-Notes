@@ -1,3 +1,8 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
 .centeredBox {
     width: 400px;
     height: 250px;
@@ -12,11 +17,11 @@
     background-color: rgba(0, 107, 179, 0.5);
     font-family: Cardo;
 
-    /* Absolute centering with a transform */
+    
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);  /* Moves it back by 50% of its own size */
+    transform: translate(-50%, -50%); 
     z-index: 1;
 }
 

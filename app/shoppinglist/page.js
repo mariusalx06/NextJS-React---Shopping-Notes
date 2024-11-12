@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function NoteKeeper() {
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.wrapper}>
       <Header />
       
       <Footer />

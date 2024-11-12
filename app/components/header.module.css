@@ -1,13 +1,23 @@
 .header{
     position: sticky;
     top: 0;
-    background-color: #006bb3;
     text-align: center;
     padding: 16px 32px;
     color: #fff;
     font-size: 0.9rem;
     z-index: 100;
     font-family: geistMono;
+}
+
+.default {
+    background-color: #006bb3;
+}
+.notekeeper{
+    background-color: #f5ba13;
+}
+
+.shoppinglist{
+    background-color: #00FF9C;
 }
 
 @media (max-width: 600px) {

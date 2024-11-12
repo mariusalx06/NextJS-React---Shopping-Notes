@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.wrapper}>
       <Header />
       <div className={styles.centeredBox}>
         <h2 className={styles.header2}>Choose which app you want to access</h2>

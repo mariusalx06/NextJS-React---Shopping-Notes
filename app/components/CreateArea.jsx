@@ -28,7 +28,6 @@ export default function CreateArea(props) {
     }
 
   return (
-    <div className={styles.centeredBox}>
       <form className={styles.form}>
         <input
           name="title"
@@ -48,6 +47,5 @@ export default function CreateArea(props) {
             <AddBoxIcon style={{ verticalAlign: "middle" }} />
             </button>
       </form>
-    </div>
   );
 }

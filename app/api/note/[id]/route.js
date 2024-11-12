@@ -114,7 +114,7 @@ export async function PATCH(request,{params}) {
         if (!title && !content) {
             return new Response(
             JSON.stringify({
-                message: "Note hasn't changed, no data to modify",
+                message: "Error creating Note. Both title and content cannot be empty.",
                 note: response.rows[0],
             }),
             { 
@@ -127,20 +127,21 @@ export async function PATCH(request,{params}) {
         const updatedFields = [];
         const queryValues = [];
 
-        if (title) {
-            updatedFields.push(`title=$${queryValues.length + 1}`);
-            queryValues.push(title);
-          }
-        if (content) {
-            updatedFields.push(`content=$${queryValues.length + 1}`);
-            queryValues.push(content);
+        if (title !== undefined) {
+          
+          updatedFields.push(`title=$${queryValues.length + 1}`);
+          queryValues.push(title === "" ? null : title);
         }
     
+        if (content !== undefined) {
+          updatedFields.push(`content=$${queryValues.length + 1}`);
+          queryValues.push(content === "" ? null : content);
+        }
+
         queryValues.push(id);
-
         const queryStr = `UPDATE notes SET ${updatedFields.join(", ")} WHERE id=$${queryValues.length} RETURNING *`;
-        const result = await database.query(queryStr, queryValues);
 
+        const result = await database.query(queryStr, queryValues);
         const updatedNote = result.rows[0];
     
         return new Response(

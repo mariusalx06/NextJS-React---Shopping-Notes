@@ -32,32 +32,46 @@ export default function NoteKeeper() {
   };
 
   async function addNote(note) {
-    await axios.post("http://localhost:3000/api/note", note);
+    try {
+      await axios.post("http://localhost:3000/api/note", note);
+    } catch (error) {
+      alert(error.response.data.message); //create pop-up
+      console.log(error);
+    }
     fetchNotes(); // fetches data after a note is added, still fetches data if there's an error with adding the note
   }
 
   async function deleteNote(id) {
     try {
       await axios.delete(`http://localhost:3000/api/note/${id}`);
-      fetchNotes();
     } catch (error) {
+      alert("Error Deleting Note");
       console.log(error);
     }
+    fetchNotes();
   }
 
-  async function editNote(id, newTitle, newContent) {
+  async function editNote(id, newNote) {
+
+    const updatedNote = {
+      title: newNote.title === "" ? null : newNote.title,
+      content: newNote.content === "" ? null : newNote.content,
+    };
+
     const updatedNotesList = noteList.map((prevNotes) =>
       prevNotes.id === id
-        ? { ...prevNotes, title: newTitle, content: newContent }
+        ? { ...prevNotes, ...updatedNote }
         : prevNotes
     );
     setNoteList(updatedNotesList);
-    const newNote = {
-      title: newTitle,
-      content: newContent,
-    };
-    await axios.patch(`http://localhost:3000/api/note/${id}`, newNote);
+    try {
+      await axios.patch(`http://localhost:3000/api/note/${id}`, updatedNote);
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+    fetchNotes();
   }
+
   
   return (
     <div className={styles.wrapper}>

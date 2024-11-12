@@ -12,29 +12,29 @@ export async function GET() {
 
 export async function POST(request) {
   try {
-  const data = await request.json();
-  const { title, content } = data;
+    const data = await request.json();
+    const { title, content } = data;
 
-  if (!title && !content) {
-    return new Response(
-      JSON.stringify({ message: 'Either title or content is required' }),
-      { 
-        status: 400, 
-        headers: { 'Content-Type': 'application/json' } 
-      }
+    if (!title && !content) {
+      return new Response(
+        JSON.stringify({ message: 'Error adding note: Either title or content is required' }),
+        { 
+          status: 400, 
+          headers: { 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    const result = await database.query(
+      'INSERT INTO notes (title, content) VALUES ($1, $2) RETURNING *',
+      [title || null, content || null]
     );
-  }
+    const newNote = result.rows[0];
 
-  const result = await database.query(
-    'INSERT INTO notes (title, content) VALUES ($1, $2) RETURNING *',
-    [title || null, content || null]
-  );
-  const newNote = result.rows[0];
-
-  return new Response(
-    JSON.stringify({ message: 'Note created successfully', note: newNote }),
-    { status: 201, headers: { 'Content-Type': 'application/json' } }
-  );
+    return new Response(
+      JSON.stringify({ message: 'Note created successfully', note: newNote }),
+      { status: 201, headers: { 'Content-Type': 'application/json' } }
+    );
   } catch (error) {
     console.error('Error creating note:', error);
     return new Response(

@@ -29,11 +29,12 @@
     outline: none;
 }
 
-.leftbutton{
+
+.leftButton{
     float: left;
 }
 
-.rightbutton{
+.rightButton{
     float:right
 }
 

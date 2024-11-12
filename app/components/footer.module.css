@@ -1,12 +1,12 @@
 .footer {
     background-color: #006bb3;
-  text-align: center;
-  padding: 16px 32px;
-  color: #fff;
-  font-size: 0.9rem;
-  z-index: 100;
-  position: relative; /* Make sure footer is not fixed/overlapping content */
-  margin-top: auto;
+    text-align: center;
+    padding: 16px 32px;
+    color: #fff;
+    font-size: 0.9rem;
+    z-index: 100;
+    position: relative; /* Make sure footer is not fixed/overlapping content */
+    margin-top: auto;
 }
 
 .default {

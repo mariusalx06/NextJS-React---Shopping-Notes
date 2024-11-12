@@ -34,7 +34,7 @@ export default function Note(props) {
     }
   
     function handleSave(event) {
-      props.onEdit(props.id, newNote.title, newNote.content);
+      props.onEdit(props.id, newNote);
       props.setEditMode(null);
       event.preventDefault();
     }
@@ -63,7 +63,7 @@ export default function Note(props) {
               onChange={handleChange} // Update title
               placeholder="Edit Title"
               style={{ width: "100%", marginBottom: "10px" }}
-              value={newNote.title}
+              value={newNote.title||""}
             />
             <textarea
               name="content"
@@ -71,12 +71,12 @@ export default function Note(props) {
               placeholder="Edit Content"
               rows="4"
               style={{ width: "100%", marginBottom: "10px" }}
-              value={newNote.content}
+              value={newNote.content||""}
             />
-            <button onClick={handleSave} className={styles.saveButton}>
+            <button onClick={handleSave} className={styles.leftButton}>
               <SaveIcon style={{ verticalAlign: "middle" }} />
             </button>
-            <button>
+            <button className={styles.rightButton}>
               <ClearIcon
                 onClick={handleCancelEdit}
                 style={{
@@ -86,19 +86,16 @@ export default function Note(props) {
                 }}
               />
             </button>
-            <button className={styles.rightbutton} onClick={handleDelete}>
-              <DeleteIcon style={{ verticalAlign: "middle", color: "#D50000" }} />
-            </button>
           </div>
         ) : (
           <div>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
-            <button className={styles.rightbutton} onClick={handleDelete}>
+            <button className={styles.rightButton} onClick={handleDelete}>
               <DeleteIcon style={{ verticalAlign: "middle", color: "#D50000" }} />
             </button>
   
-            <button className={styles.leftbutton} onClick={handleEdit}>
+            <button className={styles.leftButton} onClick={handleEdit}>
               <EditIcon style={{ verticalAlign: "middle", color: "#FF9800" }} />
             </button>
           </div>

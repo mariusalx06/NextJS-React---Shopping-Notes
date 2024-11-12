@@ -14,19 +14,24 @@ const Footer = () => {
     
     const pathname = usePathname();
     let footerClass = '';
+    let textColor = styles.default;
     
     switch (pathname) {
         case '/':
           footerClass = styles.default;
+          textColor = styles.default;
           break;
         case '/notekeeper':
           footerClass = styles.notekeeper;
+          textColor = styles.notekeeper;
           break;
         case '/shoppinglist':
           footerClass = styles.shoppinglist;
+          textColor = styles.shoppinglist;
           break;
         default:
           footerClass = styles.default;
+          textColor = styles.default;
           break;
       }
     

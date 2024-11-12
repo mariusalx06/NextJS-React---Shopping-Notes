@@ -14,10 +14,12 @@
 }
 .notekeeper{
     background-color: #f5ba13;
+    color: #333333;
 }
 
 .shoppinglist{
     background-color: #00FF9C;
+    color: #333333;
 }
 
 @media (max-width: 600px) {

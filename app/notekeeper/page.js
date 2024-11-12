@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState,useEffect } from "react";
 import Note from "@/components/Note";
 import axios from "axios";
+import Navbar from "@/components/Navbar";
 
 
 
@@ -76,6 +77,7 @@ export default function NoteKeeper() {
   return (
     <div className={styles.wrapper}>
       <Header />
+      <Navbar />
       <CreateArea onAdd={addNote} />
       <div className={styles.noteList}>
         {noteList.map((noteItem, index) => (

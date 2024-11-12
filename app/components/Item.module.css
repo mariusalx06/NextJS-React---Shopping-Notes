@@ -1,0 +1,39 @@
+.buttonStyle {
+    padding: 0;
+    border: none;
+    font-family: "Architects Daughter", cursive;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffeaa7;
+}
+
+.li {
+    text-align: left;
+    position: relative;
+    padding: 0.5rem;
+    margin-left: 2rem;
+}
+  
+.deleteButton{
+    float: right;
+    margin-left: 10px;
+    background-color: #ff6f61;
+}
+  
+.editButton{
+    float: right;
+    margin-right: 10px;
+}
+
+.saveButton{
+    background-color: #4CAF50;
+    float: right;
+    margin-right: 10px;
+}
+
+.cancelButton{
+    background-color: #ff6f61;
+    float: right;
+    margin-right: 10px;
+}

@@ -5,7 +5,7 @@
     color: #fff;
     font-size: 0.9rem;
     z-index: 100;
-    position: relative; /* Make sure footer is not fixed/overlapping content */
+    position: relative;
     margin-top: auto;
 }
 
@@ -14,10 +14,12 @@
 }
 .notekeeper{
     background-color: #f5ba13;
+    color: #333333;
 }
 
 .shoppinglist{
     background-color: #00FF9C;
+    color: #333333;
 }
 
 .footerContent {
@@ -38,23 +40,35 @@
 }
   
 .socialLink {
-    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    border: 1px solid transparent;
 }
   
 .socialLink:hover {
-    color: #333333; /* Hover effect with warm yellow */
+    border: 1px solid #333333;
 }
 
 @media (max-width: 600px) {
+    .footer {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
     .footerContent {
       flex-direction: column;
       align-items: center;
+      gap: 10px;
     }
   
     .socialLinks {
-      margin-top: 10px;
+      gap: 10px;
     }
-    
+  
+    .socialLink {
+      font-size: 14px;
+    }
 }

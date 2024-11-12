@@ -19,21 +19,24 @@
     float: right;
     margin-left: 10px;
     background-color: #ff6f61;
+    cursor: pointer;
 }
   
 .editButton{
     float: right;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .saveButton{
     background-color: #4CAF50;
     float: right;
-    margin-right: 10px;
+    cursor: pointer;
 }
 
 .cancelButton{
     background-color: #ff6f61;
     float: right;
-    margin-right: 10px;
+    margin-right: 20px;
+    cursor: pointer;
 }

@@ -102,7 +102,7 @@ export default function ShoppingList() {
               value={inputText}
               writingText={writingText}
             />
-            <button className={styles.buttonStyle} onClick={addItem} type="submit">
+            <button className={styles.buttonAdd} onClick={addItem} type="submit">
               <AddShoppingCartIcon style={{ verticalAlign: "middle" }} />
             </button>
             <button className={`${styles.completeButton} ${styles.buttonStyle}`} onClick={completeAll} type="button">

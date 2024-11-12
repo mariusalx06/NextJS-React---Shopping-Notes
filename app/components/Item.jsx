@@ -40,13 +40,6 @@ export default function Item(props) {
   const renderEditButtons = () => (
     <>
       <button
-        onClick={handleDelete}
-        className={`${styles.deleteButton} ${styles.buttonStyle}`}
-        aria-label="Delete Item"
-      >
-        <BackspaceIcon style={{ verticalAlign: "middle" }} />
-      </button>
-      <button
         onClick={handleSave}
         className={`${styles.saveButton} ${styles.buttonStyle}`}
         aria-label="Save Item"

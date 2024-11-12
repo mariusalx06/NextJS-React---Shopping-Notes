@@ -40,8 +40,8 @@
 
 @media (max-width: 600px) {
     .note {
-        width: 80%; /* Make each note take up 90% of the screen width */
-        margin-bottom: 10px; /* Add space between notes */
-        max-width: 500px;  /* Optional: Set a max-width to prevent notes from becoming too large */
+        width: 80%;
+        margin-bottom: 10px;
+        max-width: 500px;
     }
 }

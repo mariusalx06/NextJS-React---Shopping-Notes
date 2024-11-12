@@ -5,10 +5,6 @@
 }
 
 .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     max-width: 500px;
     min-width: 250px;
@@ -22,6 +18,7 @@
     padding: 1rem;
     box-sizing: border-box;
     overflow-y: auto;
+    margin: 2rem auto;
 }
 
 .container::-webkit-scrollbar {
@@ -63,7 +60,7 @@
     font-size: 1.5rem;
 }
   
-.buttonStyle {
+.buttonAdd {
     padding: 0;
     border: none;
     font-family: "Architects Daughter", cursive;
@@ -71,13 +68,21 @@
     padding: 5px;
     border-radius: 5px;
     background-color: #ffeaa7;
+    cursor: pointer;
 }
 
   
 .completeButton {
+    padding: 0;
+    border: none;
+    font-family: "Architects Daughter", cursive;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
     background-color: #4CAF50;
     margin-right: 8px;
     margin-left: 40px;
+    cursor: pointer;
 }
 
 .formdiv {
